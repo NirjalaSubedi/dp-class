@@ -54,5 +54,9 @@ for(let x of arr){
 }
 console.log(sum)
 
+let str="nirjala"
+for(let i of str){
+    console.log(i)
+}
 
 
