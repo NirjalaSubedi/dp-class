@@ -45,6 +45,14 @@ for(let i=1;i<=10;i++)
 }
 console.log("sum of first 10 numbers:",sum)
 
+//for of loop implementation
+//for array we use for of loop
+sum=1
+let arr=[1,3,2]
+for(let x of arr){
+    sum*=x
+}
+console.log(sum)
 
 
 
