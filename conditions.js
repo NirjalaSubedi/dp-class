@@ -59,4 +59,10 @@ for(let i of str){
     console.log(i)
 }
 
+const obj={
+    name:"nirjala", faculty:"bca"
+}
+for(let i in obj){
+    console.log(i,"is",obj[i])
+}
 
