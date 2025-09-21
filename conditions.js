@@ -34,7 +34,16 @@ let mark=80
 mark>=40?console.log("You are pass"):console.log("You are fail")
 
 //for loop
-
+for(let i=0;i<=5;i++){
+    console.log("hello world",i)
+}
+//sum of first 10 numbers
+let sum=0;
+for(let i=1;i<=10;i++)
+{
+    sum+=i;
+}
+console.log("sum of first 10 numbers:",sum)
 
 
 
