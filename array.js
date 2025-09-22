@@ -30,3 +30,24 @@ console.log(arr.slice(1,3))
 console.log(arr.splice(1,2,"hello"))
 console.log(arr)
 
+console.log("---------------------------------")
+//Array of an string
+
+const str=["orange","apple","bannana","pinaple"]
+console.log(str)
+console.log("length of an array:",str.length)
+console.log("value at index 2:",str.at(2))
+console.log("join all array string ",str.join(","))
+console.log("remove last element:" ,str.pop())
+console.log(str)
+console.log("Add in  last element:" ,str.push("kiwi"))
+console.log(str)
+console.log("remove first element:" ,str.shift())
+console.log(str)
+console.log("Add in  first element:" ,str.unshift("grapes"))
+console.log(str)
+console.log("slice item between index 1 and 3",str.slice(1,3))
+console.log("replace the slice item to coconut and orange:",str.splice(1,2,"coconut","orange"))
+console.log(str)
+
+
