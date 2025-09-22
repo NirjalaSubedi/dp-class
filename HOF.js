@@ -25,9 +25,33 @@ console.log(newarr)
 
 //Another example of mapping
 
+// let MapArr=[1,2,3,4,5,6,7]
+// let Mapped=MapArr.map((num)=>{
+//     return num-1
+// })
+// console.log(MapArr)
+// console.log(Mapped)
+
+//Another way of doing mapping
 let MapArr=[1,2,3,4,5,6,7]
-let Mapped=MapArr.map((num)=>{
-    return num-1
-})
+let Mapped=MapArr.map((num)=>num-1)
 console.log(MapArr)
 console.log(Mapped)
+
+//Mapping in a string Array
+let strMap=["nirjala","samikshya","prajina"]
+let str=strMap.map((newString)=>{
+    if(newString==strMap[0]){
+        return newString
+    }
+})
+console.log(str)
+
+//using foreach to get index[ 0 ] element
+console.log("================")
+let str1=strMap.forEach((n)=>{
+    if(n==strMap[0]){
+        console.log(n)
+    }
+})
+
