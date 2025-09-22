@@ -17,3 +17,9 @@ console.log(arr)
 console.log(arr.push(100))
 console.log(arr)
 
+//shift unshift from array
+console.log(arr.shift())
+console.log(arr)
+console.log(arr.unshift(78))
+console.log(arr)
+
