@@ -23,3 +23,10 @@ console.log(arr)
 console.log(arr.unshift(78))
 console.log(arr)
 
+//slice
+console.log(arr.slice(1,3))
+
+//splice
+console.log(arr.splice(1,2,"hello"))
+console.log(arr)
+
