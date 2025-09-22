@@ -11,3 +11,9 @@ console.log(arr.at(2))
 //join method
 console.log(arr.join("-"))
 
+//push pop from array
+console.log(arr.pop())
+console.log(arr)
+console.log(arr.push(100))
+console.log(arr)
+
