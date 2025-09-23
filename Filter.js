@@ -5,7 +5,7 @@ const result=num.filter((numFilter)=>{
 })
 console.log(result)
 
-//filtering in string
+//Map in string
 
 const str=['a','e','i','o','u']
 const strResult=str.map((strFilter)=>{
@@ -13,3 +13,10 @@ const strResult=str.map((strFilter)=>{
 })
 
 console.log(strResult)
+
+//reduce
+const reduceArr=[0,7,2,4,5]
+const reduce=reduceArr.reduce((pre,curr)=>{
+    return pre+curr
+},0)
+console.log(reduce)
