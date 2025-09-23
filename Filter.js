@@ -20,3 +20,4 @@ const reduce=reduceArr.reduce((pre,curr)=>{
     return pre+curr
 },0)
 console.log(reduce)
+
