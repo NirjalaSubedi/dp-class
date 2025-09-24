@@ -4,17 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* #btn1{
+            background-color: aqua;
+        }
+        #btn2{
+            background-color:red;
+        }
+        #btn3{
+            background-color:pink;
+        } */
+    </style>
 </head>
 <body>
-    <button id="btn">Click me</button>
+    <h1 id="headings"> Please change my color</h1>
+    <button id="btn1">Red</button>
+    <button id="btn2">yellow</button>
+    <button id="btn3">blue</button>
     <div id="container"> </div>
     <script>
-        let btn=document.getElementById("btn")
-        let conatiner=document.getElementById("container")
-         btn.addEventListener("click",(e)=>{
-        //    alert("hello")
-        conatiner.textContent="why you clicked me"
-         })
+        // let btn=document.getElementById("btn")
+        // let conatiner=document.getElementById("container")
+        //  btn.addEventListener("click",(e)=>{
+        // //    alert("hello")
+        // conatiner.textContent="why you clicked me"
+        //  })
+let btn1=document.getElementById("btn1")
+let headings=document.getElementById("headings")
+btn1.addEventListener("click",()=>{
+    btn1.style.backgroundColor="red"
+    headings.style.color="red"
+})
+let btn2=document.getElementById("btn2")
+btn2.addEventListener("click",()=>{
+    btn2.style.backgroundColor="yellow"
+     headings.style.color="yellow"
+})
+let btn3=document.getElementById("btn3")
+btn3.addEventListener("click",()=>{
+    btn3.style.backgroundColor="blue"
+     headings.style.color="blue"
+})
+
     </script>
 </body>
 </html>
