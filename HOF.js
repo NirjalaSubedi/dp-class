@@ -8,11 +8,14 @@ arr.forEach((x)=>{
 })
 
 //Another example
+
 const num=[3,6,8,22,34,12,1,5,7]
 num.forEach((data)=>{
     if(data%2==0)
         console.log("Even numbers in array:",data)
 })
+
+
 console.log("------------------------------")
 //Mapping
 
