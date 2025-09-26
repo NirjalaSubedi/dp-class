@@ -5,35 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Applications</title> 
     <style>
-        .main-container{
-            display:flex;
-            gap:5px;
+        #todo-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
 
-        }
-        .btn{
-            background-color:rgb(252, 54, 54);
-            border:rgb(252, 54, 54);
-            padding:5px;
-            padding-left:10px;
-            padding-right:10px;
-            border-radius: 10px;
-            color:white;
-        }
-        .Search-box{
-            padding:2px;
-        }
+#todo-list li {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
       
     </style>
 </head>
 <body>
-    <div class="main-container">
-    <div class="Search-box">
-        <input type="text" placeholder="search">
-    </div>
-    <div>
-        <button class="btn">Enter</button>
-    </div>
-    </div>
+    <input type="text" id="todo-input" placeholder="Enter a task">
+<button class="btn" onclick="addTodo()">Add</button>
+<ul id="todo-list"></ul>
+    <script>
+        let todos = [];
+
+function addTodo() {
+  const input = document.getElementById("todo-input");
+  const task = input.value.trim();
+
+  if (task !== "") {
+    todos.push(task);
+    input.value = "";
+    renderTodos();
+  }
+}
+
+function renderTodos() {
+  const list = document.getElementById("todo-list");
+  list.innerHTML = "";
+
+  todos.forEach((todo, index) => {
+    const li = document.createElement("li");
+    li.textContent = todo;
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    delBtn.className = "btn";
+    delBtn.onclick = () => {
+      todos.splice(index, 1);
+      renderTodos();
+    };
+
+    li.appendChild(delBtn);
+    list.appendChild(li);
+  });
+}
+    </script>
     
 </body>
 </html>
