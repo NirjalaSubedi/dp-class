@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Applications</title> 
+    <style>
+        #todo-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+#todo-list li {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+      
+    </style>
+</head>
+<body>
+    <input type="text" id="todo-input" placeholder="Enter a task">
+<button class="btn" onclick="addTodo()">Add</button>
+<ul id="todo-list"></ul>
+<script>
+  let todos = [];
+
+  function addTodo() {
+    const input = document.getElementById("todo-input");
+    const task = input.value.trim();
+
+    if (task !== "") {
+      todos.push(task);
+      input.value = "";
+      renderTodos();
+    }
+  }
+
+  function renderTodos() {
+    const list = document.getElementById("todo-list");
+    list.innerHTML = "";
+
+    todos.forEach((todo) => {
+      const li = document.createElement("li");
+      li.textContent = todo;
+      list.appendChild(li);
+    });
+  }
+</script>
