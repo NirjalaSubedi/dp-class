@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo practice</title>
+</head>
+<body>
+    <input type="text" id="input-text" placeholder=" Enter Your task">
+    <button id="btn" onclick="addTodo()"> Submit</button>
+    <ul id="todo-list"> </ul>
+    <script>
+        const todo=[];
+        function addTodo(){
+            const input=document.getElementById("input-text");
+            const task=input.value.tirm();
+            if(task!==""){
+            todo.push(task);
+            input.value=""
+            todorender();
+            }
+        }
+        function todorender(){
+            const list=document.getElementById("todo-list")
+            list.innerHTML="";
+            todo.forEach((todos)=>{
+                    const li=document.createElement("li");
+                    li.textContent=todos;
+                    li.appendChild(li);
+            })
+        }
+    </script>
+</body>
+</html>
