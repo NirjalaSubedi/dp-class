@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btn" style="background-color: red;">Red</button>
+    <button class="btn" style="background-color: yellow;">Yellow</button>
+    <button class="btn" style="background-color: blue;">Blue</button>
+    <button class="btn" style="background-color: green;">Green</button>
+    <script>
+
+const btns=document.querySelectorAll('.btn');
+
+btns[0].addEventListener('click',()=>{
+    document.body.style.backgroundColor='red';
+});
+btns[1].addEventListener('click',()=>{
+    document.body.style.backgroundColor='yellow';
+});
+btns[2].addEventListener('click',()=>{
+    document.body.style.backgroundColor='blue';
+});
+btns[3].addEventListener('click',()=>{
+    document.body.style.backgroundColor='green';
+});
+</script>
+</body>
+</html>
