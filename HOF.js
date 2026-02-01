@@ -27,13 +27,14 @@ console.log(newarr)
 //Note:-> map le value return garxa vane foreach le value return gardaiina
 
 //Another example of mapping
-
-// let MapArr=[1,2,3,4,5,6,7]
-// let Mapped=MapArr.map((num)=>{
-//     return num-1
-// })
-// console.log(MapArr)
-// console.log(Mapped)
+console.log("pppppppppppppppppppppppppppp")
+let MapArr1=[1,2,3,4,5,6,7]
+let Mapped1=MapArr1.map((num)=>{
+   return num-1
+})
+console.log(MapArr1)
+console.log(Mapped1)
+console.log("okkkkkkkkkkkkkkkkkkkkkkkk")
 
 //Another way of doing mapping
 let MapArr=[1,2,3,4,5,6,7]

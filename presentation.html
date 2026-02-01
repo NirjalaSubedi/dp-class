@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library Management System Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            max-width: 90%;
+            margin-top: 1rem;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #4f46e5;
+            color: white;
+            border-radius: 9999px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #4338ca;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: #4f46e5;
+            transition: width 0.3s;
+        }
+
+        .badge {
+            background: #e0e7ff;
+            color: #4338ca;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progress"></div>
+
+    <!-- Slide 1: Title -->
+    <div class="slide active" id="slide-1">
+        <h1 class="text-6xl font-extrabold text-slate-900 mb-4 text-center">Book Library Management System</h1>
+        <p class="text-2xl text-slate-600 mb-8">A Full-Stack MERN Application</p>
+        <div class="flex gap-4">
+            <span class="badge">MongoDB</span>
+            <span class="badge">Express</span>
+            <span class="badge">React</span>
+            <span class="badge">Node.js</span>
+        </div>
+        <p class="mt-12 text-slate-400">Presented by: Project Team</p>
+    </div>
+
+    <!-- Slide 2: Tech Stack -->
+    <div class="slide" id="slide-2">
+        <h2 class="text-4xl font-bold text-slate-800 mb-10 underline decoration-indigo-500">Technology Stack Used</h2>
+        <div class="grid grid-cols-2 gap-8 max-w-4xl">
+            <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold mb-2">Frontend</h3>
+                <ul class="list-disc list-inside text-slate-600">
+                    <li>React.js (Vite)</li>
+                    <li>React Router Dom</li>
+                    <li>Axios (API communication)</li>
+                    <li>Modern CSS & Flexbox</li>
+                </ul>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-green-500">
+                <h3 class="text-xl font-bold mb-2">Backend</h3>
+                <ul class="list-disc list-inside text-slate-600">
+                    <li>Node.js</li>
+                    <li>Express.js (REST API)</li>
+                    <li>Mongoose (ODM)</li>
+                    <li>CORS Security</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Database Schema -->
+    <div class="slide" id="slide-3">
+        <h2 class="text-4xl font-bold text-slate-800 mb-6">Database Modeling (Book.js)</h2>
+        <p class="text-lg text-slate-600 mb-4">Mongoose Schema defines our data structure:</p>
+        <div class="code-block">
+            const bookSchema = new mongoose.Schema({<br>
+            &nbsp;&nbsp;title: { type: String, required: true },<br>
+            &nbsp;&nbsp;author: { type: String, required: true },<br>
+            &nbsp;&nbsp;description: { type: String },<br>
+            &nbsp;&nbsp;isAvailable: { type: Boolean, default: true },<br>
+            &nbsp;&nbsp;publishYear: { type: String }<br>
+            });
+        </div>
+    </div>
+
+    <!-- Slide 4: Backend API Endpoints -->
+    <div class="slide" id="slide-4">
+        <h2 class="text-4xl font-bold text-slate-800 mb-10">Backend API Endpoints</h2>
+        <table class="w-full max-w-4xl text-left bg-white rounded-xl shadow-xl overflow-hidden">
+            <thead class="bg-indigo-600 text-white">
+                <tr>
+                    <th class="p-4">Method</th>
+                    <th class="p-4">Endpoint</th>
+                    <th class="p-4">Description</th>
+                </tr>
+            </thead>
+            <tbody class="text-slate-700">
+                <tr class="border-b">
+                    <td class="p-4 font-bold text-green-600">POST</td>
+                    <td class="p-4">/createbook</td>
+                    <td class="p-4">Saves a new book to MongoDB</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-4 font-bold text-blue-600">GET</td>
+                    <td class="p-4">/getbooks</td>
+                    <td class="p-4">Fetches all books from the database</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-4 font-bold text-orange-600">PATCH</td>
+                    <td class="p-4">/updatebook/:id</td>
+                    <td class="p-4">Updates details of an existing book</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-4 font-bold text-red-600">DELETE</td>
+                    <td class="p-4">/deletebook/:id</td>
+                    <td class="p-4">Removes a book permanently</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Slide 5: Frontend Structure -->
+    <div class="slide" id="slide-5">
+        <h2 class="text-4xl font-bold text-slate-800 mb-8">Frontend Implementation</h2>
+        <div class="flex flex-col gap-6 text-slate-700 max-w-3xl">
+            <div class="flex items-start gap-4">
+                <div class="bg-indigo-100 p-3 rounded-lg text-indigo-600 font-bold">01</div>
+                <p><strong>Axios.js:</strong> Centralized base URL configuration for cleaner API calls across all components.</p>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="bg-indigo-100 p-3 rounded-lg text-indigo-600 font-bold">02</div>
+                <p><strong>Home Page:</strong> Dynamic rendering of book cards with state management (useState/useEffect).</p>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="bg-indigo-100 p-3 rounded-lg text-indigo-600 font-bold">03</div>
+                <p><strong>Forms:</strong> Real-time input handling for creating and editing book details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Routing -->
+    <div class="slide" id="slide-6">
+        <h2 class="text-4xl font-bold text-slate-800 mb-8">Navigation & Routing</h2>
+        <div class="p-8 bg-slate-100 rounded-2xl border-2 border-dashed border-slate-300">
+            <ul class="space-y-4 text-xl">
+                <li>🏠 <span class="font-mono text-indigo-600">/</span> - Dashboard View</li>
+                <li>➕ <span class="font-mono text-indigo-600">/add</span> - Add New Record</li>
+                <li>✏️ <span class="font-mono text-indigo-600">/edit/:id</span> - Update Existing Record</li>
+            </ul>
+        </div>
+        <p class="mt-8 text-slate-500 italic">Implemented using React Router v6</p>
+    </div>
+
+    <!-- Slide 7: Success/Results -->
+    <div class="slide" id="slide-7">
+        <h2 class="text-4xl font-bold text-slate-800 mb-10">Project Outcome</h2>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="text-center p-6">
+                <div class="text-4xl mb-2">✅</div>
+                <p class="font-bold">Real-time Sync</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="text-4xl mb-2">☁️</div>
+                <p class="font-bold">Cloud Stored</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="text-4xl mb-2">📱</div>
+                <p class="font-bold">Fully Responsive</p>
+            </div>
+        </div>
+        <h1 class="text-5xl font-black text-indigo-600 mt-20">THANK YOU!</h1>
+        <p class="text-slate-500 mt-4">Questions?</p>
+    </div>
+
+    <div class="controls">
+        <button class="btn" id="prevBtn">← Previous</button>
+        <button class="btn" id="nextBtn">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 7;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+
+        function updateSlide() {
+            slides.forEach(s => s.classList.remove('active'));
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+            
+            // Update progress bar
+            const percent = (currentSlide / totalSlides) * 100;
+            progress.style.width = `${percent}%`;
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') document.getElementById('nextBtn').click();
+            if (e.key === 'ArrowLeft') document.getElementById('prevBtn').click();
+        });
+    </script>
+</body>
+</html>

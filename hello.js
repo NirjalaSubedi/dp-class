@@ -49,7 +49,7 @@ let Obj1=[{
     name:"ram", faculty:"IT"
 }]
 for(let k in Obj1){
-    console.log(Obj1[k].name)
+    console.log(Obj1[k])
 }
 console.log("*********")
 let Arr=[1,2,3,4,5,6,7,8];
@@ -72,3 +72,14 @@ var str1="hello"
 }
 str1="hello world"
 console.log(str1)
+
+
+console.log("ooooooooooooooooooooooo")
+let Obj2=[{
+    name:"sita", faculty:"bca"
+},{
+    name:"ram", faculty:"IT"
+}]
+for(let k in Obj2){
+    console.log("hello",Obj2[k].name)
+}

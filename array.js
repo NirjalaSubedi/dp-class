@@ -22,12 +22,12 @@ console.log(arr.shift())
 console.log(arr)
 console.log(arr.unshift(78))
 console.log(arr)
-
+console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 //slice
 console.log(arr.slice(1,3))
 
 //splice
-console.log(arr.splice(1,2,"hello"))
+console.log(arr.splice(1,3,"nirjala"))
 console.log(arr)
 
 console.log("---------------------------------")
