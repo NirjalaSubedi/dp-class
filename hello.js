@@ -81,5 +81,10 @@ let Obj2=[{
     name:"ram", faculty:"IT"
 }]
 for(let k in Obj2){
-    console.log("hello",Obj2[k].name)
+    console.log("hello",k)
+}
+
+const arrayname=['nirjala','samikshya','yubraj'];
+for(let name of arrayname){
+    console.log(name)
 }
