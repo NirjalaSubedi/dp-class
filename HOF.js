@@ -6,7 +6,7 @@ arr.forEach((x)=>{
     console.log(x)
    }
 })
-
+//mmmmmmmmmmmmmmmmmmmmmm
 //Another example
 //--------------------------
 const num=[3,6,8,22,34,12,1,5,7]
