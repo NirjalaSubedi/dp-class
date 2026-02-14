@@ -4,6 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
+    <style>
+        .main-container{
+            width: 200px;
+            height: 300px;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .ac{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .ac-button{
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .buttons{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .number-button, .operator-button, .equals-button{
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .operator-button{
+            background-color: orange;
+        }
+        .equals-button{
+            background-color: green;
+            color: white;
+        }
+    </style>
 </head>
 <body>
    <div class="main-container">
