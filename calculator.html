@@ -3,57 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
+    <title>Modern Calculator</title>
     <style>
-        .main-container{
-            width: 200px;
-            height: 300px;
-            background-color: lightgray;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .main-container {
+            width: 220px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
+            gap: 10px;
         }
-        .ac{
+        /* Naya Screen Style */
+        #display {
             width: 100%;
+            height: 50px;
+            background-color: #222;
+            color: #0f0; /* Retro green color */
+            text-align: right;
+            padding: 10px;
+            font-size: 24px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+        .ac {
             display: flex;
             justify-content: flex-end;
         }
-        .ac-button{
-            width: 40px;
+        .ac-button {
+            width: 50px;
             height: 40px;
-            background-color: red;
+            background-color: #ff3b30;
             color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
         }
-        .buttons{
-            width: 100%;
+        .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
+            gap: 8px;
         }
-        .number-button, .operator-button, .equals-button{
-            width: 40px;
-            height: 40px;
-            background-color: white;
+        button {
+            width: 45px;
+            height: 45px;
             border: none;
             border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.2s;
         }
-        .operator-button{
-            background-color: orange;
+        .number-button {
+            background-color: #eee;
         }
-        .equals-button{
-            background-color: green;
+        .number-button:hover {
+            background-color: #ccc;
+        }
+        .operator-button {
+            background-color: #ff9500;
+            color: white;
+        }
+        .operator-button:hover {
+            background-color: #e08400;
+        }
+        .equals-button {
+            background-color: #34c759;
             color: white;
         }
     </style>
 </head>
 <body>
+
    <div class="main-container">
+    <div id="display">0</div>
+
     <div class="ac">
         <button class="ac-button">AC</button>
     </div>
+
     <div class="buttons">
         <button class="number-button">7</button>
         <button class="number-button">8</button>
@@ -75,7 +115,9 @@
         <button class="equals-button">=</button>
         <button class="operator-button">+</button>
    </div>
+
    <script>
+    const display = document.getElementById('display');
     const acButton = document.querySelector('.ac-button');
     const numberButtons = document.querySelectorAll('.number-button');
     const operatorButtons = document.querySelectorAll('.operator-button');
@@ -85,55 +127,53 @@
     let operator = '';
     let firstOperand = null;
 
+    // Numbers thichda screen ma dekhine logic
     numberButtons.forEach(button => {
         button.addEventListener('click', () => {
             currentInput += button.textContent;
-            console.log(currentInput);
+            display.textContent = currentInput;
         });
     });
 
+    // Operator thichda pahilo number save garne
     operatorButtons.forEach(button => {
         button.addEventListener('click', () => {
             if (currentInput) {
                 firstOperand = parseFloat(currentInput);
                 operator = button.textContent;
-                currentInput = '';
+                currentInput = ''; // Arko number thichna lai khali gareko
             }
         });
     });
 
+    // Calculation garne logic
     equalsButton.addEventListener('click', () => {
         if (currentInput && operator && firstOperand !== null) {
             const secondOperand = parseFloat(currentInput);
             let result;
 
             switch (operator) {
-                case '+':
-                    result = firstOperand + secondOperand;
-                    break;
-                case '-':
-                    result = firstOperand - secondOperand;
-                    break;
-                case '*':
-                    result = firstOperand * secondOperand;
-                    break;
-                case '/':
-                    result = firstOperand / secondOperand;
+                case '+': result = firstOperand + secondOperand; break;
+                case '-': result = firstOperand - secondOperand; break;
+                case '*': result = firstOperand * secondOperand; break;
+                case '/': 
+                    result = secondOperand !== 0 ? firstOperand / secondOperand : "Error"; 
                     break;
             }
 
-            console.log(result);
+            display.textContent = result;
             currentInput = result.toString();
             operator = '';
             firstOperand = null;
         }
     });
 
+    // Clear garne logic
     acButton.addEventListener('click', () => {
         currentInput = '';
         operator = '';
         firstOperand = null;
-        console.log('Cleared');
+        display.textContent = '0';
     });
    </script>
 </body>
