@@ -75,5 +75,66 @@
         <button class="equals-button">=</button>
         <button class="operator-button">+</button>
    </div>
+   <script>
+    const acButton = document.querySelector('.ac-button');
+    const numberButtons = document.querySelectorAll('.number-button');
+    const operatorButtons = document.querySelectorAll('.operator-button');
+    const equalsButton = document.querySelector('.equals-button');
+
+    let currentInput = '';
+    let operator = '';
+    let firstOperand = null;
+
+    numberButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentInput += button.textContent;
+            console.log(currentInput);
+        });
+    });
+
+    operatorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (currentInput) {
+                firstOperand = parseFloat(currentInput);
+                operator = button.textContent;
+                currentInput = '';
+            }
+        });
+    });
+
+    equalsButton.addEventListener('click', () => {
+        if (currentInput && operator && firstOperand !== null) {
+            const secondOperand = parseFloat(currentInput);
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = firstOperand + secondOperand;
+                    break;
+                case '-':
+                    result = firstOperand - secondOperand;
+                    break;
+                case '*':
+                    result = firstOperand * secondOperand;
+                    break;
+                case '/':
+                    result = firstOperand / secondOperand;
+                    break;
+            }
+
+            console.log(result);
+            currentInput = result.toString();
+            operator = '';
+            firstOperand = null;
+        }
+    });
+
+    acButton.addEventListener('click', () => {
+        currentInput = '';
+        operator = '';
+        firstOperand = null;
+        console.log('Cleared');
+    });
+   </script>
 </body>
 </html>
