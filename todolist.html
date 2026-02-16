@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To-Do List - Lab 14a</title>
+    <style>
+        .completed { text-decoration: line-through; color: gray; }
+        li { margin-bottom: 8px; font-size: 18px; }
+        button { margin-left: 10px; cursor: pointer; }
+        .task-text { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Task Manager</h2>
+    <input type="text" id="todoInput" placeholder="Enter task name...">
+    <button id="addBtn">Add Task</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+        const input = document.getElementById('todoInput');
+        const addBtn = document.getElementById('addBtn');
+        const list = document.getElementById('todoList');
+
+        addBtn.addEventListener('click', () => {
+            if (input.value.trim() === "") return;
+
+            // Create elements
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span class="task-text">${input.value}</span>
+                <button class="delete-btn">Delete</button>
+            `;
+
+            // Mark as completed
+            li.querySelector('.task-text').addEventListener('click', function() {
+                this.classList.toggle('completed');
+            });
+
+            // Remove task
+            li.querySelector('.delete-btn').addEventListener('click', () => {
+                li.remove();
+            });
+
+            list.appendChild(li);
+            input.value = ""; // Clear input
+        });
+    </script>
+</body>
+</html>
