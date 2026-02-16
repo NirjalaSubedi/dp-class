@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Content Filtering - Lab 14b</title>
+    <style>
+        .item { border: 1px solid #ddd; padding: 10px; margin: 5px; border-radius: 4px; }
+        #displayArea { display: flex; flex-wrap: wrap; margin-top: 20px; }
+        select { padding: 8px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>Product Filter</h2>
+    <label>Filter by Category: </label>
+    <select id="categoryFilter">
+        <option value="all">All Items</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+    </select>
+
+    <div id="displayArea"></div>
+
+    <script>
+        // Data Array
+        const products = [
+            { name: "Laptop", category: "electronics", price: "Rs800" },
+            { name: "Smartphone", category: "electronics", price: "Rs500" },
+            { name: "T-Shirt", category: "clothing", price: "Rs20" },
+            { name: "Jeans", category: "clothing", price: "Rs40" }
+        ];
+
+        const filterSelect = document.getElementById('categoryFilter');
+        const displayArea = document.getElementById('displayArea');
+
+        // Function to render items
+        function renderItems(filter) {
+            displayArea.innerHTML = ""; // Clear current view
+
+            const filteredItems = filter === "all" 
+                ? products 
+                : products.filter(p => p.category === filter);
+
+            filteredItems.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "item";
+                div.innerHTML = `<strong>${item.name}</strong><br>Price: ${item.price}`;
+                displayArea.appendChild(div);
+            });
+        }
+
+        // Event Listener for selection change
+        filterSelect.addEventListener('change', (e) => {
+            renderItems(e.target.value);
+        });
+
+        // Initial Load
+        renderItems("all");
+    </script>
+</body>
+</html>
