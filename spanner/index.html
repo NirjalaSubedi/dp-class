@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Random Spinner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bhagya Ko Wheel 🎡</h1>
+        
+        <div class="input-section">
+            <input type="text" id="optionInput" placeholder="Option lekhnus... (e.g. Momo)">
+            <button onclick="addOption()">Thapnus</button>
+        </div>
+
+        <ul id="optionList"></ul>
+
+        <div class="canvas-container">
+            <canvas id="wheel" width="400" height="400"></canvas>
+            <div class="arrow"></div>
+        </div>
+
+        <button id="spinBtn" onclick="spin()">Spin Garnus!</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
