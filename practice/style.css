@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 #header{
     font-size: 3rem;
@@ -24,5 +25,5 @@
     height:50px;
     background-color: #090909;
     margin: 50px;
-    
+    border-radius: 20px;
 }
