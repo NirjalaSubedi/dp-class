@@ -9,44 +9,75 @@
 <body>
     <div class="container">
         <h1 id="header">Ludo Game</h1>
-        <div id="board">
-            <div class="red">
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
+        <div id="board" aria-label="Ludo board">
+            <div class="yard red">
+                <div class="yard-inner">
+                    <div class="token red-token"></div>
+                    <div class="token red-token"></div>
+                    <div class="token red-token"></div>
+                    <div class="token red-token"></div>
+                </div>
             </div>
-            
-            <div class="green">
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
+
+            <div class="yard green">
+                <div class="yard-inner">
+                    <div class="token green-token"></div>
+                    <div class="token green-token"></div>
+                    <div class="token green-token"></div>
+                    <div class="token green-token"></div>
+                </div>
             </div>
-            <div class="yellow">
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
+
+            <div class="yard yellow">
+                <div class="yard-inner">
+                    <div class="token yellow-token"></div>
+                    <div class="token yellow-token"></div>
+                    <div class="token yellow-token"></div>
+                    <div class="token yellow-token"></div>
+                </div>
             </div>
-            <div class="blue">
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
-                <div class="home"></div>
+
+            <div class="yard blue">
+                <div class="yard-inner">
+                    <div class="token blue-token"></div>
+                    <div class="token blue-token"></div>
+                    <div class="token blue-token"></div>
+                    <div class="token blue-token"></div>
+                </div>
             </div>
-            <div class="path-container top-path">
+
+            <div class="path-container top-path" id="top-path">
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
             </div>
-            <div class="path-container bottom-path">
+
+            <div class="path-container bottom-path" id="bottom-path">
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div>
             </div>
-            <div class="path-container left-path">
+
+            <div class="path-container left-path" id="left-path">
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
             </div>
-            <div class="path-container right-path">
+
+            <div class="path-container right-path" id="right-path">
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
             </div>
 
             <div class="center-home">
             </div>
-            
         </div>
     </div>
 </body>
