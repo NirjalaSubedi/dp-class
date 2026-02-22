@@ -7,7 +7,7 @@
     <style>
         h1{
             text-align: center;
-            color:rgb(23, 104, 9);
+            color:rgb(56, 156, 38);
             font-size:50px;
             font-weight:bold;
 
@@ -22,6 +22,17 @@
             height: 500px;
             margin: 20px;
         }
+        .btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: rgb(247, 75, 63);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 26px;
+        }
     </style>
 </head>
 <body>
@@ -29,15 +40,15 @@
     <div class="container">
         <div>
             <img src="image.png">
-            <button onclick="applyFilter()">Apply Filter</button>
+            <button class="btn" onclick="applyFilter()">Apply Filter</button>
         </div>
         <div>
             <img src="nature.png">
-            <button onclick="applyFilter()">Apply Filter</button>
+            <button class="btn" onclick="applyFilter()">Apply Filter</button>
         </div>
         <div>
             <img src="new.jpeg">
-            <button onclick="applyFilter()">Apply Filter</button>
+            <button class="btn" onclick="applyFilter()">Apply Filter</button>
         </div>
     </div>
     <script>
