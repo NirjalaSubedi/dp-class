@@ -40,25 +40,26 @@
     <div class="container">
         <div>
             <img src="image.png">
-            <button class="btn" onclick="applyFilter()" data-name="1">Apply Filter</button>
+            <button class="btn" onclick="applyFilter(this)" data-name="1">Apply Filter</button>
         </div>
         <div>
             <img src="nature.png">
-            <button class="btn" onclick="applyFilter()" data-name="2">Apply Filter</button>
+            <button class="btn" onclick="applyFilter(this)" data-name="2">Apply Filter</button>
         </div>
         <div>
             <img src="new.jpeg">
-            <button class="btn" onclick="applyFilter()" dataname="3">Apply Filter</button>
+            <button class="btn" onclick="applyFilter(this)" dataname="3">Apply Filter</button>
         </div>
     </div>
     <div class="display">
 
     </div>
     <script>
-        function applyFilter() {
+        function applyFilter(element) {
             const display = document.querySelector('.display');
-            display.innerHTML = '<h2>Filter Applied!</h2>';
-            display.innerHTML= ''
+            const imageSrc = element.previousElementSibling.src;
+            display.innerHTML = `<h2>Filter Applied!</h2>
+            <img src="${imageSrc}" style="width: 400px; height: auto; border: 5px solid green;">`;
         }
     </script>
 </body>
