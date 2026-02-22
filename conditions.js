@@ -65,6 +65,8 @@ const obj={
 for(let i in obj){
     console.log(i,"is",obj[i])
 }
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
  let sub11=["nepali", "english", "social"];
  for(let k in sub11){
     console.log(sub11);
